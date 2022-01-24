@@ -1,0 +1,34 @@
+<svg width="116" height="116" viewBox="0 0 116 116" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g filter="url(#filter0_f_203_14358)">
+<circle cx="58" cy="58" r="57" fill="#DEDCDD"/>
+</g>
+<g filter="url(#filter1_if_203_14358)">
+<circle cx="58" cy="58" r="48.3636" fill="#363435"/>
+</g>
+<g filter="url(#filter2_f_203_14358)">
+<ellipse cx="35.331" cy="38.8709" rx="6.83295" ry="21.2353" transform="rotate(32.55 35.331 38.8709)" fill="white"/>
+</g>
+<defs>
+<filter id="filter0_f_203_14358" x="0" y="0" width="116" height="116" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+<feGaussianBlur stdDeviation="0.5" result="effect1_foregroundBlur_203_14358"/>
+</filter>
+<filter id="filter1_if_203_14358" x="8.63635" y="5.63635" width="101.727" height="101.727" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+<feOffset dx="4" dy="-4"/>
+<feGaussianBlur stdDeviation="10"/>
+<feComposite in2="hardAlpha" operator="arithmetic" k2="-1" k3="1"/>
+<feColorMatrix type="matrix" values="0 0 0 0 0.479167 0 0 0 0 0.479167 0 0 0 0 0.479167 0 0 0 0.4 0"/>
+<feBlend mode="normal" in2="shape" result="effect1_innerShadow_203_14358"/>
+<feGaussianBlur stdDeviation="0.5" result="effect2_foregroundBlur_203_14358"/>
+</filter>
+<filter id="filter2_f_203_14358" x="7.5332" y="5.59387" width="55.5956" height="66.554" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+<feGaussianBlur stdDeviation="7.5" result="effect1_foregroundBlur_203_14358"/>
+</filter>
+</defs>
+</svg>
