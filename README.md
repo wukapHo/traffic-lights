@@ -1,4 +1,5 @@
 # traffic-lights
+[deploy link](https://traffic-lights-test.netlify.app)
 
 ## Project setup
 ```
