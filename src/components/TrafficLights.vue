@@ -43,47 +43,29 @@ export default {
   },
 
   methods: {
-    changeColor() {
-      this.color = this.light.color;
+    setColor(color) {
+      this.color = color;
+      const idx = this.colorList.findIndex((item) => item.color === color);
+      const colorConfig = this.colorList[idx];
 
-      const currentColorIdx = this.colorList.indexOf(this.light);
-      switch (currentColorIdx) {
-        case 0:
-          this.order = 1;
-          break;
-        case this.colorList.length - 1:
-          this.order = -1;
-          break;
-      }
+      if (color === "red") this.order = 1;
+      if (color === "green") this.order = -1;
 
       setTimeout(() => {
-        const nextColor = this.colorList[currentColorIdx + this.order];
+        this.isFlashing = false;
+        const nextColor = this.colorList[idx + this.order];
         this.$router.push({
           name: "traffic-lights",
           params: { color: nextColor.color },
         });
-        this.isFlashing = false;
-      }, this.light.workingTime);
+      }, colorConfig.workingTime);
 
       setTimeout(() => {
         this.isFlashing = true;
-      }, this.light.workingTime - this.light.flashingTime);
-    },
+      }, colorConfig.workingTime - colorConfig.flashingTime);
 
-    isBlank(str) {
-      switch (str) {
-        case "":
-        case undefined:
-          return true;
-        default:
-          return false;
-      }
+      this.timer = colorConfig.workingTime / 1000;
     },
-
-    setTimer() {
-      this.timer = this.light.workingTime / 1000;
-    },
-
     tick() {
       this.timer--;
       if (this.timer === 0) this.timer = null;
@@ -95,9 +77,9 @@ export default {
 
   watch: {
     $route() {
-      if (this.isBlank(this.$route.params.color)) {
+      if (!this.$route.params.color) {
         let currentColor;
-        if (this.isBlank(localStorage.color)) {
+        if (!localStorage.color) {
           currentColor = this.colorList[0].color;
         } else {
           currentColor = localStorage.color;
@@ -108,17 +90,8 @@ export default {
         });
       } else {
         localStorage.color = this.$route.params.color;
-        this.changeColor();
-        this.setTimer();
+        this.setColor(localStorage.color);
       }
-    },
-  },
-
-  computed: {
-    light() {
-      return this.colorList.find(
-        (light) => light.color === this.$route.params.color
-      );
     },
   },
 
