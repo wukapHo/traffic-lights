@@ -1,13 +1,19 @@
 <template>
   <div :class="[color, { flashing: isFlashing }]" class="traffic-lights">
     <div class="traffic-lights__lamp traffic-lights__lamp--red">
-      <span v-show="color === 'red'" class="timer">{{ timer }}</span>
+      <span v-show="color === 'red'" class="timer">{{
+        timer ? timer : ""
+      }}</span>
     </div>
     <div class="traffic-lights__lamp traffic-lights__lamp--yellow">
-      <span v-show="color === 'yellow'" class="timer">{{ timer }}</span>
+      <span v-show="color === 'yellow'" class="timer">{{
+        timer ? timer : ""
+      }}</span>
     </div>
     <div class="traffic-lights__lamp traffic-lights__lamp--green">
-      <span v-show="color === 'green'" class="timer">{{ timer }}</span>
+      <span v-show="color === 'green'" class="timer">{{
+        timer ? timer : ""
+      }}</span>
     </div>
   </div>
 </template>
@@ -66,9 +72,9 @@ export default {
 
       this.timer = colorConfig.workingTime / 1000;
     },
+
     tick() {
       this.timer--;
-      if (this.timer === 0) this.timer = null;
       setTimeout(() => {
         this.tick();
       }, 1000);
